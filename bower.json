@@ -1,0 +1,22 @@
+{
+  "name": "jarvis",
+  "version": "0.1.0",
+  "description": "Just a rather very intelligent system",
+  "authors": [
+    "Eric Heikes <eheikes@gmail.com>"
+  ],
+  "main": "dist/app/index.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals"
+  ],
+  "license": "Apache-2",
+  "homepage": "https://github.com/eheikes/jarvis",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "jarvis",
+  "version": "0.1.0",
+  "description": "Just a rather very intelligent system",
+  "main": "dist/api/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eheikes/jarvis.git"
+  },
+  "author": "Eric Heikes <eheikes@gmail.com>",
+  "license": "Apache-2",
+  "bugs": {
+    "url": "https://github.com/eheikes/jarvis/issues"
+  },
+  "homepage": "https://github.com/eheikes/jarvis",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
