@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 
-gulp.task('default', function() {
-  console.log('running default');
-});
+require('./gulp/client');
+
+gulp.task('build', ['build:client']);
+gulp.task('serve', ['serve:client']);
