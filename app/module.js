@@ -1,1 +1,1 @@
-angular.module('jarvis', []);
+angular.module('jarvis', ['ui.bootstrap']);

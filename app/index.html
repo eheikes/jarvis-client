@@ -10,16 +10,22 @@
 
     <!-- build:css app.css -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app.css">
     <!-- endbuild -->
   </head>
 
   <body>
     <div class="container">
-      hello
+      <tabset type="pills">
+        <tab heading="Summary">Here is the summary page.</tab>
+        <tab heading="Remove">Here is the removal page.</tab>
+        <tab heading="Add">Here is the addition page.</tab>
+      </tabset>
     </div>
 
     <!-- build:js app.js -->
     <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="module.js"></script>
     <!-- endbuild -->
   </body>
