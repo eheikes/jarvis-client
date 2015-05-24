@@ -6,3 +6,7 @@
 .nav {
   margin-bottom: 10px;
 }
+
+.suggestions .list-group-item .breadcrumb {
+  margin-bottom: 10px;
+}

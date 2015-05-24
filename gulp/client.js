@@ -6,6 +6,7 @@ var extend      = require('extend');
 var gulp        = require('gulp');
 var minifyCss   = require('gulp-minify-css');
 var mkdirp      = require('mkdirp');
+var ngtemplates = require('gulp-angular-templatecache');
 var parseArgs   = require('minimist')
 var rename      = require('gulp-rename');
 var rev         = require('gulp-rev');
@@ -32,6 +33,7 @@ gulp.task('copy:mocks', function() {
   if (args.mocks) {
     return gulp.src([
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/Faker/build/build/faker.js',
       'app/mockApiService.js'
     ])
       .pipe(concat('mocks.js'))
@@ -50,6 +52,15 @@ gulp.task('ngconstant', function() {
     .pipe(gulp.dest('.tmp'));
 });
 
+gulp.task('ngtemplates', function() {
+  gulp.src('app/views/*.html')
+    .pipe(ngtemplates({
+      module: 'jarvis',
+      filename: 'templates.js'
+    }))
+    .pipe(gulp.dest('.tmp'));
+});
+
 gulp.task('usemin', function () {
   return gulp.src('app/index.html')
     .pipe(usemin({
@@ -62,7 +73,7 @@ gulp.task('usemin', function () {
 gulp.task('build:client', function(done) {
   return runSequence(
     'clean:client',
-    ['ngconstant', 'copy:mocks'],
+    ['ngconstant', 'ngtemplates', 'copy:mocks'],
     'usemin',
     done
   );

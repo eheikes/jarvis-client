@@ -1,0 +1,15 @@
+<ul class="suggestions list-group">
+  <li class="list-group-item row" ng-repeat="suggestion in suggestions">
+    <ol class="breadcrumb">
+      <li>{{::suggestion.service}}</li>
+      <li class="active h4"><a href="{{::suggestion.url}}" target="_blank">{{::suggestion.name}}</a></li>
+    </ol>
+    <p>{{::suggestion.summary}}</p>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Possible actions">
+      <button ng-repeat="action in suggestion.actions" class="btn btn-danger"
+        ng-click="do('{{::action}}', '{{::suggestion.service}}', '{{::suggestion.id}}')">
+        {{::action | humanize | ucwords}}
+      </button>
+    </div>
+  </li>
+</ul>

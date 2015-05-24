@@ -18,21 +18,18 @@ angular.module('jarvis')
   );
 })
 .factory('suggestionApi', function suggestionApi($resource, config) {
-  return $resource(config.apiUrl + '/suggest',
-    {
-      count: '@count'
-    }
-  );
+  return $resource(config.apiUrl + '/suggest');
 })
-.factory('api', function apiService(serviceApi, serviceDetailApi) {
+.factory('apiService', function apiService(statsApi, serviceApi, serviceDetailApi, suggestionApi) {
   // Returns stats for the last 7 days,
   function getStats() {
     return statsApi.get().$promise;
   }
 
   // Returns suggested items for deletion.
-  function getSuggestions(count) {
-    return suggestionApi.query({ count: count }).$promise;
+  // Includes the properties "id", "service", "name", "url", and "actions".
+  function getSuggestions() {
+    return suggestionApi.query().$promise;
   }
 
   // Adds an item to the given service.

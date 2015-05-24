@@ -1,1 +1,1 @@
-angular.module('jarvis', ['ui.bootstrap']);
+angular.module('jarvis', ['ngResource', 'ui.bootstrap']);

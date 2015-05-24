@@ -1,2 +1,4 @@
-appUrl: http://localhost:9000/
-apiUrl: http://localhost:9001/
+# URLs for the client app and the server API.
+# Should *not* have a trailing slash.
+appUrl: http://localhost:9000
+apiUrl: http://localhost:9001
