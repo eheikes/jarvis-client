@@ -1,21 +1,21 @@
 {
-  "name": "jarvis",
+  "name": "jarvis-client",
   "version": "0.1.0",
-  "description": "Just a rather very intelligent system",
+  "description": "JARVIS client",
   "main": "dist/api/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eheikes/jarvis.git"
+    "url": "https://github.com/eheikes/jarvis-client.git"
   },
   "author": "Eric Heikes <eheikes@gmail.com>",
   "license": "Apache-2",
   "bugs": {
-    "url": "https://github.com/eheikes/jarvis/issues"
+    "url": "https://github.com/eheikes/jarvis-client/issues"
   },
-  "homepage": "https://github.com/eheikes/jarvis",
+  "homepage": "https://github.com/eheikes/jarvis-client",
   "devDependencies": {
     "del": "^1.1.1",
     "extend": "^2.0.1",
