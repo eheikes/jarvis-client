@@ -27,7 +27,6 @@ angular.module('jarvis')
   }
 
   // Returns suggested items for deletion.
-  // Includes the properties "id", "service", "name", "url", and "actions".
   function getSuggestions() {
     return suggestionApi.query().$promise;
   }
