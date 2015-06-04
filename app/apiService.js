@@ -37,8 +37,12 @@ angular.module('jarvis')
   }
 
   // Removes the specified item.
-  function remove(serviceName, id) {
-    return serviceDetailApi.delete({ serviceName: serviceName, id: id }).$promise;
+  function remove(serviceName, action, id) {
+    return serviceDetailApi.delete({
+      serviceName: serviceName,
+      action: action,
+      id: id
+    }).$promise;
   }
 
   return {
