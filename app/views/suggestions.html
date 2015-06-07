@@ -5,7 +5,7 @@
       <li>{{::suggestion.service}}</li>
       <li class="active h4"><a href="{{::suggestion.url}}" target="_blank">{{::suggestion.name}}</a></li>
     </ol>
-    <p ng-if="suggestion.summary">{{::suggestion.summary}} ({{::suggestion.reason}})</p>
+    <p ng-if="suggestion.summary">{{::suggestion.summary}}</p>
     <div class="btn-group btn-group-sm" role="group" aria-label="Possible actions">
       <button ng-repeat="action in suggestion.actions" class="btn btn-danger"
         ng-click="do(action, suggestion.service, suggestion.id)">
