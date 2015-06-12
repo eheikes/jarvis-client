@@ -4,9 +4,17 @@
 
 This project is the web UI part of the JARVIS system. It acts as a virtual assistant for managing your busy life.
 
-## Usage
+## Installation
 
-The files in the `dist` folder are ready to be served.
+You'll need [Node.js](https://nodejs.org/), [Bower](http://bower.io/), and [gulp](http://gulpjs.com/) to build the app.
+
+```shell
+npm install
+bower install
+gulp build
+```
+
+The files will be compiled into the `dist` folder, ready to be served.
 
 ## Configuration
 
@@ -14,19 +22,9 @@ Configuration files go inside the `config` folder. You can create any file recog
 
 ## Development
 
-You'll need [Node.js](https://nodejs.org/), [Bower](http://bower.io/), and [gulp](http://gulpjs.com/) to work on the app.
-
-First install its dependencies:
+Other gulp tasks available for development work:
 
 ```shell
-npm install
-bower install
-```
-
-To build:
-
-```shell
-gulp build  # compile only
-gulp serve  # compile and serve the app at http://localhost:9000
+gulp serve          # compile and serve the app at http://localhost:9000
 gulp serve --mocks  # as above, but mock the API
 ```
