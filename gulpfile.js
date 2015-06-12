@@ -18,12 +18,12 @@ var usemin      = require('gulp-usemin');
 var args = parseArgs(process.argv.slice(2));
 
 gulp.task('clean', function(done) {
-  del(['.tmp', 'dist/app'], done);
+  del(['.tmp', 'dist'], done);
 });
 
 gulp.task('connect', function() {
   connect.server({
-    root: 'dist/app',
+    root: 'dist',
     port: 9000,
     livereload: true
   });
@@ -67,7 +67,7 @@ gulp.task('usemin', function () {
       css: [minifyCss(), rev()],
       js: [rev()]
     }))
-    .pipe(gulp.dest('dist/app'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', function(done) {
