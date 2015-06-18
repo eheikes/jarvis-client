@@ -7,6 +7,33 @@
   margin-bottom: 10px;
 }
 
+ul.stats {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul.stats:after {
+  clear: left;
+  content: "";
+  display: table;
+}
+
+ul.stats li {
+  float: left;
+  list-style: none;
+  margin-right: 1em;
+}
+
+.stats ins {
+  color: red;
+  text-decoration: none;
+}
+
+.stats del {
+  color: green;
+  text-decoration: none;
+}
+
 .suggestions .list-group-item .breadcrumb {
   margin-bottom: 10px;
 }
