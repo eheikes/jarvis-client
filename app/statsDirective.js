@@ -5,11 +5,18 @@ angular.module('jarvis').directive('stats', function(apiService) {
     scope: {},
     link: function(scope, element, attrs) {
       apiService.getStats().then(function(stats) {
-        scope.stats     = stats;
-        scope.today     = scope.stats.today;
-        scope.week      = scope.stats.week;
-        scope.breakdown = scope.stats.breakdown.map(function(item) {
-          item.today.width = item.today.added / scope.today.added * 100;
+        scope.stats      = stats;
+        scope.today      = scope.stats.today;
+        scope.today.diff = scope.today.added - scope.today.deleted;
+        scope.week       = scope.stats.week;
+        scope.breakdown  = scope.stats.breakdown.map(function(item) {
+          var thisDiff, todayDiff;
+          item.today.diff = item.today.added - item.today.deleted;
+          thisDiff  = Math.max(0, item.today.diff);
+          todayDiff = Math.max(0, scope.today.diff);
+          item.today.width = (todayDiff === 0) ?
+            0 :
+            thisDiff / todayDiff * 100;
           return item;
         })
       });

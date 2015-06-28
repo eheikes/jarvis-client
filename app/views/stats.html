@@ -7,7 +7,9 @@
     <div ng-repeat="item in breakdown" class="row">
       <div class="name col-xs-12 col-sm-2 col-md-2">{{item.plugin}}</div>
       <div class="value col-xs-12 col-sm-10 col-md-10">
-        <div class="bar" ng-style="{width: item.today.width + '%'}">+{{item.today.added}}</div>
+        <div class="bar" ng-style="{width: item.today.width + '%'}" ng-class="{added: item.today.diff > 0, deleted: item.today.diff <= 0}">
+          <span ng-if="item.today.diff >= 0">+</span>{{item.today.diff}}
+        </div>
       </div>
     </div>
   </div>

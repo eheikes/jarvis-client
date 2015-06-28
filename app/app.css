@@ -40,10 +40,17 @@
 
 .stats .breakdown .bar {
   color: white;
-  background-color: red;
   padding: .1em .5em;
   min-width: 3em;
   border-radius: .5em;
+}
+
+.stats .breakdown .bar.added {
+  background-color: red;
+}
+
+.stats .breakdown .bar.deleted {
+  background-color: green;
 }
 
 .suggestions .list-group-item .breadcrumb {
