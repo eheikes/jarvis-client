@@ -25,7 +25,7 @@ gulp.task('connect', function() {
   connect.server({
     root: 'dist',
     port: 9000,
-    livereload: true
+    livereload: false
   });
 });
 
@@ -82,7 +82,6 @@ gulp.task('build', function(done) {
 gulp.task('watch', function() {
   var files = ['app/**', 'config/**'];
   gulp.watch(files, ['build']);
-  gulp.watch(files, connect.reload);
 });
 
 gulp.task('serve', function(done) {
