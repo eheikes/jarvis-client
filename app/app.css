@@ -7,31 +7,43 @@
   margin-bottom: 10px;
 }
 
-ul.stats {
+.stats .summary {
   margin-left: 0;
   padding-left: 0;
 }
 
-ul.stats:after {
+.stats .summary:after {
   clear: left;
   content: "";
   display: table;
 }
 
-ul.stats li {
+.stats .summary li {
   float: left;
   list-style: none;
   margin-right: 1em;
 }
 
-.stats ins {
+.stats .summary ins {
   color: red;
   text-decoration: none;
 }
 
-.stats del {
+.stats .summary del {
   color: green;
   text-decoration: none;
+}
+
+.stats .breakdown .row {
+  margin-bottom: .5em;
+}
+
+.stats .breakdown .bar {
+  color: white;
+  background-color: red;
+  padding: .1em .5em;
+  min-width: 3em;
+  border-radius: .5em;
 }
 
 .suggestions .list-group-item .breadcrumb {

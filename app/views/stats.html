@@ -1,4 +1,14 @@
-<ul class="stats">
-  <li>Today: <ins>+{{today.added}}</ins> / <del>-{{today.deleted}}</del>
-  <li>This Week: <ins>+{{week.added}}</ins> / <del>-{{week.deleted}}</del>
-</ul>
+<div class="stats">
+  <ul class="summary">
+    <li>Today: <ins>+{{today.added}}</ins> / <del>-{{today.deleted}}</del>
+    <li>This Week: <ins>+{{week.added}}</ins> / <del>-{{week.deleted}}</del>
+  </ul>
+  <div class="breakdown">
+    <div ng-repeat="item in breakdown" class="row">
+      <div class="name col-xs-12 col-sm-2 col-md-2">{{item.plugin}}</div>
+      <div class="value col-xs-12 col-sm-10 col-md-10">
+        <div class="bar" ng-style="{width: item.today.width + '%'}">+{{item.today.added}}</div>
+      </div>
+    </div>
+  </div>
+</div>
