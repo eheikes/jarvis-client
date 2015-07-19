@@ -2,7 +2,7 @@
 
 > JARVIS: Just a rather very intelligent system
 
-This project is the web UI part of the JARVIS system. (You'll also need the [jarvis-api](https://github.com/eheikes/jarvis-api) and some plugins.) It acts as a virtual assistant for managing your busy life.
+This project is the web UI part of the JARVIS system. (You'll also need the [jarvis-api](https://github.com/eheikes/jarvis-api) and some plugins.) It acts as a virtual assistant for managing your busy life, helping you reach a zero- or negative-sum "inbox".
 
 ## Installation
 
