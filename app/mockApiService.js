@@ -1,6 +1,8 @@
+/* global angular, faker */
 angular.module('jarvis').requires.push('ngMockE2E');
 
 angular.module('jarvis').run(function($httpBackend, config, ucwordsFilter) {
+  'use strict';
 
   var services = {
     'Email': ['delete', 'archive'],

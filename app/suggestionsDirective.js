@@ -1,4 +1,6 @@
+/* global angular */
 angular.module('jarvis').directive('suggestions', function(apiService) {
+  'use strict';
   return {
     restrict: 'E',
     templateUrl: 'suggestions.html',

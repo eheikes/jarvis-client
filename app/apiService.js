@@ -1,8 +1,11 @@
+/* global angular */
 angular.module('jarvis')
 .factory('statsApi', function statsApi($resource, config) {
+  'use strict';
   return $resource(config.apiUrl + '/stats');
 })
 .factory('serviceApi', function serviceApi($resource, config) {
+  'use strict';
   return $resource(config.apiUrl + '/:serviceName',
     {
       serviceName: '@serviceName'
@@ -10,6 +13,7 @@ angular.module('jarvis')
   );
 })
 .factory('serviceDetailApi', function serviceDetailApi($resource, config) {
+  'use strict';
   return $resource(config.apiUrl + '/:serviceName/:id',
     {
       serviceName: '@serviceName',
@@ -18,9 +22,12 @@ angular.module('jarvis')
   );
 })
 .factory('suggestionApi', function suggestionApi($resource, config) {
+  'use strict';
   return $resource(config.apiUrl + '/suggest');
 })
 .factory('apiService', function apiService(statsApi, serviceApi, serviceDetailApi, suggestionApi) {
+  'use strict';
+
   // Returns stats for the last 7 days,
   function getStats() {
     return statsApi.get().$promise;
@@ -50,5 +57,5 @@ angular.module('jarvis')
     getStats: getStats,
     getSuggestions: getSuggestions,
     remove: remove
-  }
+  };
 });

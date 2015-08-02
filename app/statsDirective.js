@@ -1,4 +1,6 @@
+/* global angular */
 angular.module('jarvis').directive('stats', function(apiService) {
+  'use strict';
   return {
     restrict: 'E',
     templateUrl: 'stats.html',
@@ -18,7 +20,7 @@ angular.module('jarvis').directive('stats', function(apiService) {
             0 :
             thisDiff / todayDiff * 100;
           return item;
-        })
+        });
       });
     }
   };

@@ -47,7 +47,10 @@ gulp.task('copy:mocks', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src('app/*.js')
+  return gulp.src([
+    'app/*.js',
+    '!app/config-template.js'
+  ])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });
