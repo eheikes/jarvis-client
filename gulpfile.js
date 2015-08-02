@@ -4,6 +4,7 @@ var connect     = require('gulp-connect');
 var del         = require('del');
 var extend      = require('extend');
 var gulp        = require('gulp');
+var jshint      = require('gulp-jshint');
 var minifyCss   = require('gulp-minify-css');
 var mkdirp      = require('mkdirp');
 var ngtemplates = require('gulp-angular-templatecache');
@@ -45,6 +46,12 @@ gulp.task('copy:mocks', function() {
   }
 });
 
+gulp.task('lint', function() {
+  return gulp.src('app/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
 gulp.task('ngconstant', function() {
   return gulp.src('app/config-template.js')
     .pipe(template({ config: extend({}, config, args) }))
@@ -81,12 +88,12 @@ gulp.task('build', function(done) {
 
 gulp.task('watch', function() {
   var files = ['app/**', 'config/**'];
-  gulp.watch(files, ['build']);
+  gulp.watch(files, ['lint', 'build']);
 });
 
 gulp.task('serve', function(done) {
   return runSequence(
-    'build',
+    ['lint', 'build'],
     ['connect', 'watch']
   );
 });

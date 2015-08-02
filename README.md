@@ -31,6 +31,10 @@ gulp serve --mocks  # as above, but mock the API
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
+```shell
+gulp lint  # run linting
+```
+
 ## License
 
 Copyright 2015 Eric Heikes.
